@@ -31,9 +31,10 @@ function searchKeyPress(e) {
 
 function nav(cmd) {
   if (/^(?:(?:https?|ftp):\/\/).*/i.test(cmd)) {
-    document.location.href = encodeURIComponent(cmd);
+    document.location.href = encodeURI(cmd);
   } else {
-    document.location.href = "http://" + encodeURIComponent(cmd);
+    document.location.href = "http://" + encodeURI(cmd);
+    console.log(cmd);
   }
 }
 
@@ -41,9 +42,26 @@ function search(cmd) {
   window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(cmd);
 }
 
+var alias = {
+  "ab": "animebytes.tv",
+  "btn": "broadcasthe.net",
+  "fb": "facebook.com",
+  "gh": "github.com",
+  "li": "linkedin.com",
+  "moodle": "moodle.mta.ca",
+  "nyaa": "nyaa.eu",
+  "plex": "plex.tv/web",
+  "ptp": "passthepopcorn.me",
+  "wcd": "what.cd",
+}
+
 function parseCmd(cmd) {
   if (cmd == "bk") {
     document.location.href = "bkmks/"
+  }
+
+  else if (cmd in alias) {
+    nav(alias[cmd]);
   }
 
   else if (urlPattern.test(cmd)) {
