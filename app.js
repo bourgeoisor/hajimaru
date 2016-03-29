@@ -39,7 +39,7 @@ function nav(cmd) {
 }
 
 function search(cmd) {
-  window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(cmd);
+  window.location.href = "https://duckduckgo.com/?&atb=v5&q=" + encodeURIComponent(cmd);
 }
 
 var alias = {
