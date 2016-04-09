@@ -53,6 +53,7 @@ var alias = {
   "plex": "plex.tv/web",
   "ptp": "passthepopcorn.me",
   "wcd": "what.cd",
+  "yt": "youtube.com",
 }
 
 function parseCmd(cmd) {
