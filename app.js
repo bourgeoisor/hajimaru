@@ -1,23 +1,14 @@
-var now = new Date();
-
-function hour() {
-  if (now.getHours().toString().length < 2) {
-    return "0" + now.getHours();
-  } else {
-    return now.getHours();
-  }
-}
-
-function minute() {
-  if (now.getMinutes().toString().length < 2) {
-    return "0" + now.getMinutes();
-  } else {
-    return now.getMinutes();
-  }
+function zeropad(num) {
+  return num.toString().length < 2 ? "0" + num : num;
 }
 
 var time = document.getElementById("js-time");
-time.innerHTML = hour() + ":" + minute();
+function updateClock() {
+  var now = new Date();
+  time.innerHTML = zeropad(now.getHours()) + ":" + zeropad(now.getMinutes());
+  setTimeout(updateClock, 1000);
+}
+updateClock();
 
 var box = document.getElementById("js-search-text");
 var urlPattern = /^(https?:\/\/)?[^ ]+[.][^ ]+([.][^ ]+)*(\/[^ ]+)?$/i;
@@ -30,12 +21,7 @@ function searchKeyPress(e) {
 }
 
 function nav(cmd) {
-  if (/^(?:(?:https?|ftp):\/\/).*/i.test(cmd)) {
-    document.location.href = encodeURI(cmd);
-  } else {
-    document.location.href = "http://" + encodeURI(cmd);
-    console.log(cmd);
-  }
+  document.location.href = /^(?:(?:https?|ftp):\/\/).*/i.test(cmd) ? encodeURI(cmd) : "http://" + encodeURI(cmd);
 }
 
 function search(cmd) {
