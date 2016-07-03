@@ -3,8 +3,8 @@ html {
 }
 
 body {
-  background-color: #052026;
-  font-family: "Droid Sans", monospace;
+  background-color: {{ colorbg }};
+  font-family: "{{ font }}", monospace;
   font-size: 14px;
   margin-left: 7%;
   color: #ffffff;

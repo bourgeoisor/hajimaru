@@ -3,8 +3,14 @@ import json
 import os
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument("aliases", help="the filepath of the aliases in JSON format")
+parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument("aliases", help="filepath of the aliases in JSON format")
+parser.add_argument("-c", "--colorfg", help="search box color", default="#17373E")
+parser.add_argument("-C", "--colorbg", help="background color", default="#052026")
+parser.add_argument("-f", "--font", help="default font", default="Droid Sans")
+parser.add_argument("-F", "--fonturl", help="external font URL", default="https://fonts.googleapis.com/css?family=Droid+Sans:400")
+parser.add_argument("-t", "--title", help="title of the page", default="New Tab")
+parser.add_argument("-s", "--search", help="query url of the default search engine", default="https://duckduckgo.com/?&atb=v5&q=")
 args = parser.parse_args()
 
 env = Environment(loader=FileSystemLoader("templates"))
@@ -16,9 +22,9 @@ template_js = env.get_template("startpage.js")
 with open(args.aliases) as data_file:
     aliases = json.load(data_file)
 
-render_html = template_html.render()
-render_css = template_css.render()
-render_js = template_js.render(aliases=aliases)
+render_html = template_html.render(title=args.title, fonturl=args.fonturl)
+render_css = template_css.render(font=args.font, colorfg=args.colorfg, colorbg=args.colorbg)
+render_js = template_js.render(aliases=aliases, search=args.search)
 
 if not os.path.exists("output"):
     os.makedirs("output")

@@ -25,7 +25,7 @@ function nav(cmd) {
 }
 
 function search(cmd) {
-  window.location.href = "https://duckduckgo.com/?&atb=v5&q=" + encodeURIComponent(cmd);
+  window.location.href = "{{ search }}" + encodeURIComponent(cmd);
 }
 
 var alias = {

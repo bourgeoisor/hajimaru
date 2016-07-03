@@ -9,6 +9,10 @@ To generate the three web page files, run the following:
 
     python startpage.py path/to/aliases.json
 
+For a full list of the optional arguments:
+
+    python startpage.py --help
+
 The `aliases.json` file is in JSON format and contain the list of aliases to translate in the startpage search box.
 
     {
@@ -23,6 +27,10 @@ To generate the three web page files, run the following:
 
     python bookmarks.py path/to/bookmarks.json
 
+For a full list of the optional arguments:
+
+    python startpage.py --help
+
 The `bookmarks.json` file is in JSON format and contain the list of bookmark URLs.
 
     {
@@ -35,3 +43,8 @@ The `bookmarks.json` file is in JSON format and contain the list of bookmark URL
         "obmoZ": "obmoz.com"
       }
     }
+
+Collaboration
+-------------
+
+Feel free to fork this repository, make changes and create a pull requests, and to create new issues!
