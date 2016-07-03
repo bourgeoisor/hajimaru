@@ -2,6 +2,8 @@
 
 Hajimaru is an easy way to get started with a beautiful and practical set of startpage and bookmarks list as simple web pages.  Both generators can be use independently of each other.
 
+A live demo is available [here](http://t.bourgeois.io/code/hajimaru/startpage.html) and [here](http://t.bourgeois.io/code/hajimaru/bookmarks.html).
+
 Generate a Startpage
 --------------------
 
