@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans:400" />
+  <link rel="stylesheet" type="text/css" href="bookmarks.css" />
+  <title>Bookmarks</title>
+</head>
+<body>
+  <table style="height:100%">
+    <tr style="height:100%">
+      <td style="vertical-align:middle">
+        <span class="toggle">>_</span>
+        {%- for category, urls in bookmarks|dictsort %}
+        <div class="category">
+          <h2>{{ category }}</h2>
+          <div class="urls">
+          {%- for name, url in urls|dictsort %}
+            <a href="{{ url }}">{{ name }}</a><br />
+          {%- endfor %}
+          </div>
+        </div>
+        {% endfor -%}
+      </td>
+    </tr>
+  </table>
+  <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+  <script src="bookmarks.js"></script>
+</body>
+</html>
