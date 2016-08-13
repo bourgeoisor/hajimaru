@@ -7,7 +7,7 @@ import argparse
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("bookmarks", help="the filepath of the bookmarks in JSON format")
-parser.add_argument("-C", "--colorbg", help="background color", default="#052026")
+parser.add_argument("-C", "--colorbg", help="background color", default="#002B36")
 parser.add_argument("-f", "--font", help="default font", default="Droid Sans")
 parser.add_argument("-F", "--fonturl", help="external font URL", default="https://fonts.googleapis.com/css?family=Droid+Sans:400")
 parser.add_argument("-t", "--title", help="title of the page", default="Bookmarks")

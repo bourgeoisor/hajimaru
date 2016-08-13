@@ -7,8 +7,8 @@ import argparse
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("aliases", help="filepath of the aliases in JSON format")
-parser.add_argument("-c", "--colorfg", help="search box color", default="#17373E")
-parser.add_argument("-C", "--colorbg", help="background color", default="#052026")
+parser.add_argument("-c", "--colorfg", help="search box color", default="#073642")
+parser.add_argument("-C", "--colorbg", help="background color", default="#002B36")
 parser.add_argument("-f", "--font", help="default font", default="Droid Sans")
 parser.add_argument("-F", "--fonturl", help="external font URL", default="https://fonts.googleapis.com/css?family=Droid+Sans:400")
 parser.add_argument("-t", "--title", help="title of the page", default="New Tab")
